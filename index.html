@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body
+    class="bg-[#0b131e] text-white min-h-screen flex flex-col items-center p-4 sm:p-8 font-sans">
+    <div class="w-full max-w-2xl">
+      <header class="text-center my-6">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-2">
+          GitHub Profile Finder
+        </h1>
+        <p class="text-gray-400 text-sm">
+          Search any GitHub user to see their profile and latest repositories.
+        </p>
+      </header>
+
+      <form id="search-form" class="flex gap-3 mb-4">
+        <input
+          type="text"
+          id="username-input"
+          placeholder="Enter a GitHub username..."
+          class="flex-1 bg-[#121e2d] border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 transition"/>
+        <button
+          type="submit"
+          class="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-6 py-3 rounded-lg transition duration-200">
+          Search
+        </button>
+      </form>
+      <div
+        class="flex items-center gap-2 text-xs sm:text-sm text-gray-400 mb-8">
+        <span>Try:</span>
+        <button
+          onclick="searchUser('torvalds')"
+          class="text-amber-400 hover:underline">
+          torvalds
+        </button>
+        <button
+          onclick="searchUser('gaearon')"
+          class="text-amber-400 hover:underline">
+          gaearon
+        </button>
+        <button
+          onclick="searchUser('sindresorhus')"
+          class="text-amber-400 hover:underline">
+          sindresorhus
+        </button>
+      </div>
+
+      <div
+        id="status-message"
+        class="hidden text-center py-4 text-gray-400 text-lg"></div>
+
+      <div id="result-container" class="space-y-6"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
